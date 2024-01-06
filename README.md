@@ -57,6 +57,11 @@ Normal JS utility functions
     * Whenver a state variable changes React re-renders the component
 - useEffect()
 
+# 2 types of Routing in web apps
+- Client side routing
+- Server side routing
+
+
 
 
 
