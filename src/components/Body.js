@@ -42,7 +42,7 @@ const Body = () => {
             </div>
             <div className="res-container">
                 {filteredRestaurants.map((restaurant) => {
-                    return (<Link className="res-link" to={"/restaurants/" + restaurant.info.id}><RestaurantCard key={restaurant.info.id} resData={restaurant} /></Link>)
+                    return (<Link className="res-link" to={"/restaurants/" + restaurant.info.id} key={restaurant.info.id}><RestaurantCard key={restaurant.info.id} resData={restaurant} /></Link>)
                 })}
             </div>
         </div>
