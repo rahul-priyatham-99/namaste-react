@@ -3,11 +3,13 @@ import resList from "./utils/mockedData"
 import { useState, useEffect } from "react"
 import Shimmer from "./Shimmer"
 import { Link } from "react-router-dom"
+import useOnlineStatus from "./utils/useOnlineStatus"
 
 const Body = () => {
     const [listOfRestaurants, setListOfRestaurants] = useState([])
     const [filteredRestaurants, setFilteredRestaurants] = useState([])
     const [searchText, setSearchText] = useState('')
+    const onlineStatus = useOnlineStatus();
 
     const fetchData = async () => {
         const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING')
@@ -23,6 +25,10 @@ const Body = () => {
     // if (listOfRestaurants.length === 0){
     //     return <Shimmer/>
     // }
+    if (onlineStatus === false){
+        return  <h1>Look's like your not connected to internet !!!!</h1>
+    } 
+
     return listOfRestaurants.length === 0 ? <Shimmer /> : (
         <div className="body">
             <div className="filter">

@@ -25,7 +25,7 @@ class UserClass extends React.Component {
     }
 
     componentWillUnmount(){
-        console.log("componentWillUnmount is called")
+        console.log("componentWillunmount is called")
     }
 
     render() {

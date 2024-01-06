@@ -61,6 +61,17 @@ Normal JS utility functions
 - Client side routing
 - Server side routing
 
+# Episode - 08 (Important)
+- Class components 
+- Difference b/w class and functional components
+- Lifecycle methods 
+
+# Episode - 09 (Importing)
+- Creating custom hooks
+- Concept of Lazy-loading or Chunking or Code-splitting or Dynamic-bundling or On-demand loading 
+
+
+
 
 
 
