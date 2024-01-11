@@ -6,8 +6,7 @@ import { useState } from 'react'
 
 const RestaurantMenu = () => {
     // const [resInfo, setResinfo] = useState(null)
-    const [showIndex, setShowIndex] = useState(0)
-    const [showItems, setShowItems] = useState(true)
+    const [showIndex, setShowIndex] = useState(null)
 
     const { resId } = useParams()
 

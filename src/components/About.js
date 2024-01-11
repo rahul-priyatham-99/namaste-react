@@ -17,13 +17,15 @@ class About extends React.Component {
                 <h1>About</h1>
                 <div>
                     Loggedin User: 
-                    <UserContext.Consumer>
-                        {({loggedInUser}) => 
+                    <UserContext.Provider value={{loggedInUser: "sai"}}>
+                        <UserContext.Consumer>
+                            {({ loggedInUser }) =>
                             (<h1>
                                 {loggedInUser}
                             </h1>)
-                        }
-                    </UserContext.Consumer>
+                            }
+                        </UserContext.Consumer>
+                    </UserContext.Provider>
                 </div>
                 <UserClass name={"Rahul Priyatham"} location={"Bangalore"} />
             </div>

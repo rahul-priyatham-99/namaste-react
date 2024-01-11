@@ -2,16 +2,16 @@ import { useState,useEffect } from "react";
 import ItemList from "./ItemList";
 
 const RestaurantCategory = ({data, showItems, setShowIndex}) => {
-    const [hideCategory, setHideCategory] = useState(false)
+    // const [hideCategory, setHideCategory] = useState(false)
 
     const handleClick = () => {
         setShowIndex();
-        setHideCategory(!hideCategory)
+        // setHideCategory(!hideCategory)
     }
     
-    useEffect(()=> {
-        setHideCategory(true)
-    }, [])
+    // useEffect(()=> {
+    //     setHideCategory(true)
+    // }, [])
     return (
         <div>
             <div className="w-6/12 bg-gray-50 shadow-lg p-4 mx-auto my-6">
@@ -19,7 +19,7 @@ const RestaurantCategory = ({data, showItems, setShowIndex}) => {
                     <span className="font-bold text-lg">{data.title} ({data.itemCards.length})</span>
                     <span>⬇️</span>
                 </div>
-                {showItems && hideCategory && <ItemList items={data.itemCards} />}
+                {showItems && <ItemList items={data.itemCards} />}
             </div>
         </div>
     )

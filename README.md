@@ -70,6 +70,13 @@ Normal JS utility functions
 - Creating custom hooks
 - Concept of Lazy-loading or Chunking or Code-splitting or Dynamic-bundling or On-demand loading 
 
+# REDUX
+- Install @reduxjs/toolkit and react-redux
+- Build our own store
+- Connect our store to our app
+- Create a cart slice
+- Dispatch an action
+- Read the data through selector by subscribing to the store
 
 
 

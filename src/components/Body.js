@@ -20,8 +20,8 @@ const Body = () => {
     const fetchData = async () => {
         const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING')
         const response = await data.json()
-        setListOfRestaurants(response?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-        setFilteredRestaurants(response?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        setListOfRestaurants(response?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        setFilteredRestaurants(response?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
 
     useEffect(() => {
@@ -35,7 +35,7 @@ const Body = () => {
         return <h1>Look's like your not connected to internet !!!!</h1>
     }
 
-    return listOfRestaurants.length === 0 ? <Shimmer /> : (
+    return listOfRestaurants?.length === 0 ? <Shimmer /> : (
         <div className="body">
             <div className="filter flex items-center justify-center">
                 <div className="search m-1 p-1">
@@ -61,11 +61,10 @@ const Body = () => {
                 </div>
             </div>
             <div className="res-container flex flex-row flex-wrap justify-start">
-                {filteredRestaurants.map((restaurant) => {
+                {listOfRestaurants?.map((restaurant) => {
                     return (
                         <Link className="res-link" to={"/restaurants/" + restaurant.info.id} key={restaurant.info.id}>
-                            {restaurant.info.isOpen ? (<RestaurantCardOpen resData={restaurant}/>): (<RestaurantCard key={restaurant.info.id} resData={restaurant} />)}
-                               
+                            {restaurant.info.isOpen ? (<RestaurantCardOpen resData={restaurant}/>): (<RestaurantCard key={restaurant.info.id} resData={restaurant} />)}     
                         </Link>)
                 })}
             </div>
